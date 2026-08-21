@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panduan Pemakaian - Sabun Cair Belerang</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    },
+                    animation: {
+                        'pulse-heart': 'pulse-heart 1.5s ease-in-out infinite',
+                        'float': 'float 3s ease-in-out infinite',
+                        'float-delay': 'float 3s ease-in-out 1.5s infinite',
+                        'spin-slow': 'spin 12s linear infinite',
+                        'bounce-subtle': 'bounce-subtle 2s infinite',
+                    },
+                    keyframes: {
+                        'pulse-heart': {
+                            '0%, 100%': { transform: 'scale(1)' },
+                            '50%': { transform: 'scale(1.2)' },
+                        },
+                        'float': {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-8px)' },
+                        },
+                        'bounce-subtle': {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-5px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS untuk transisi Accordion -->
+    <style>
+        body {
+            background-color: #f8fafc;
+            background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s ease;
+        }
+        .faq-item.active .faq-content {
+            max-height: 500px; /* Cukup besar untuk menampung teks */
+            padding-top: 1rem;
+            padding-bottom: 1.5rem;
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="font-poppins text-slate-800 antialiased min-h-screen flex flex-col items-center">
+
+    <div class="w-full max-w-4xl bg-white/80 min-h-screen shadow-2xl flex flex-col overflow-hidden relative backdrop-blur-sm border-x border-slate-100">
+        
+        <!-- HEADER: Ucapan Terima Kasih -->
+        <header class="relative bg-gradient-to-br from-amber-400 via-orange-500 to-red-500 text-white pt-16 pb-20 px-6 text-center rounded-b-[2.5rem] shadow-lg shadow-orange-500/20 overflow-hidden">
+            <!-- Dekorasi Background -->
+            <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+                <div class="absolute -top-10 -left-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
+                <div class="absolute top-20 -right-20 w-60 h-60 bg-white/10 rounded-full blur-3xl"></div>
+            </div>
+
+            <div class="relative z-10 max-w-2xl mx-auto">
+                <div class="inline-block mb-4 text-white">
+                    <i class="fa-solid fa-heart text-5xl drop-shadow-md animate-pulse-heart text-red-100"></i>
+                </div>
+                <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 drop-shadow-sm">Terima Kasih!</h1>
+                <p class="text-base md:text-lg font-medium opacity-95 leading-relaxed drop-shadow-sm">
+                    Terima kasih telah mempercayakan perawatan kulit Anda dengan <strong class="bg-white/20 px-2 py-0.5 rounded-md">Sabun Cair Belerang</strong> kami. Kami berharap produk ini menjadi solusi terbaik untuk kesehatan kulit Anda.
+                </p>
+            </div>
+        </header>
+
+        <!-- MAIN CONTENT -->
+        <main class="flex-grow w-full px-5 py-10 space-y-16">
+
+            <!-- FAQ SECTION -->
+            <section id="faq" class="scroll-mt-10">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-400 to-blue-600 text-white flex items-center justify-center text-2xl shadow-lg shadow-blue-500/30 animate-float">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-slate-800">Tanya Jawab (FAQ)</h2>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- FAQ Item 1 -->
+                    <div class="faq-item bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow overflow-hidden border-l-4 border-l-green-500">
+                        <button class="w-full text-left px-5 py-5 flex justify-between items-center gap-4 focus:outline-none group">
+                            <span class="font-semibold text-slate-700 group-hover:text-green-600 transition-colors">Bisakah untuk anak-anak dan ibu hamil?</span>
+                            <i class="fa-solid fa-chevron-down faq-icon text-green-500 transition-transform duration-300 flex-shrink-0"></i>
+                        </button>
+                        <div class="faq-content px-5 text-slate-600 bg-green-50/50">
+                            <strong>Bisa.</strong> Sabun ini aman digunakan mulai dari usia balita hingga dewasa, serta sangat aman untuk ibu hamil dan menyusui.
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="faq-item bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow overflow-hidden border-l-4 border-l-blue-500">
+                        <button class="w-full text-left px-5 py-5 flex justify-between items-center gap-4 focus:outline-none group">
+                            <span class="font-semibold text-slate-700 group-hover:text-blue-600 transition-colors">Apakah bisa untuk panu di wajah?</span>
+                            <i class="fa-solid fa-chevron-down faq-icon text-blue-500 transition-transform duration-300 flex-shrink-0"></i>
+                        </button>
+                        <div class="faq-content px-5 text-slate-600 bg-blue-50/50">
+                            <strong>Bisa.</strong> Untuk panu, selain digunakan untuk mandi sehari-hari, gunakan juga seperti salep: balurkan merata ke area yang sakit, diamkan beberapa saat, lalu bilas.
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="faq-item bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow overflow-hidden border-l-4 border-l-red-500">
+                        <button class="w-full text-left px-5 py-5 flex justify-between items-center gap-4 focus:outline-none group">
+                            <span class="font-semibold text-slate-700 group-hover:text-red-600 transition-colors">Apakah efektif untuk biduran?</span>
+                            <i class="fa-solid fa-chevron-down faq-icon text-red-500 transition-transform duration-300 flex-shrink-0"></i>
+                        </button>
+                        <div class="faq-content px-5 text-slate-600 bg-red-50/50">
+                            <strong>Tidak bisa.</strong> Sabun ini tidak efektif untuk keluhan yang berasal dari dalam tubuh, seperti alergi makanan, cuaca, obat-obatan, serta darah kotor.
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="faq-item bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow overflow-hidden border-l-4 border-l-amber-500">
+                        <button class="w-full text-left px-5 py-5 flex justify-between items-center gap-4 focus:outline-none group">
+                            <span class="font-semibold text-slate-700 group-hover:text-amber-600 transition-colors">Jenis keluhan apa saja yang bisa diobati?</span>
+                            <i class="fa-solid fa-chevron-down faq-icon text-amber-500 transition-transform duration-300 flex-shrink-0"></i>
+                        </button>
+                        <div class="faq-content px-5 text-slate-600 bg-amber-50/50">
+                            Sabun ini sangat ampuh untuk keluhan yang disebabkan faktor eksternal seperti <strong>bakteri, jamur, kuman, dan debu</strong> (misal: gatal-gatal, panu, biang keringat, jerawat).
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 5 -->
+                    <div class="faq-item bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow overflow-hidden border-l-4 border-l-purple-500">
+                        <button class="w-full text-left px-5 py-5 flex justify-between items-center gap-4 focus:outline-none group">
+                            <span class="font-semibold text-slate-700 group-hover:text-purple-600 transition-colors">Perlukah saya ke dokter jika tak kunjung sembuh?</span>
+                            <i class="fa-solid fa-chevron-down faq-icon text-purple-500 transition-transform duration-300 flex-shrink-0"></i>
+                        </button>
+                        <div class="faq-content px-5 text-slate-600 bg-purple-50/50">
+                            <strong>Sangat perlu.</strong> Jika keluhan tak kunjung sembuh, kemungkinan penyebabnya berasal dari dalam tubuh. Sabun ini hanya bersifat pengobatan eksternal (luar).
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SARAN PEMAKAIAN -->
+            <section id="saran-pemakaian">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-400 to-emerald-600 text-white flex items-center justify-center text-2xl shadow-lg shadow-emerald-500/30 animate-float-delay">
+                        <i class="fa-solid fa-hand-sparkles"></i>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-slate-800">Saran Pemakaian</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <!-- Card 1 -->
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl mb-5 group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-white transition-all duration-300">
+                            <i class="fa-solid fa-sponge"></i>
+                        </div>
+                        <h4 class="font-bold text-lg mb-2 text-slate-800">Gunakan Spons Mandi</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">Gunakan spons mandi (shower puff) supaya pemakaian lebih irit serta menghasilkan <strong>busa yang melimpah</strong> ke seluruh tubuh.</p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-blue-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                        <div class="w-14 h-14 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center text-3xl mb-5 group-hover:scale-110 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
+                            <i class="fa-solid fa-hand-holding-medical"></i>
+                        </div>
+                        <h4 class="font-bold text-lg mb-2 text-slate-800">Metode "Salep"</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">Untuk panu & gatal: balurkan sabun ke area yang sakit, <strong>diamkan selama 10 menit</strong> agar formula meresap, baru dibilas.</p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-cyan-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                        <div class="w-14 h-14 rounded-2xl bg-cyan-100 text-cyan-600 flex items-center justify-center text-3xl mb-5 group-hover:scale-110 group-hover:bg-cyan-500 group-hover:text-white transition-all duration-300">
+                            <i class="fa-solid fa-soap"></i>
+                        </div>
+                        <h4 class="font-bold text-lg mb-2 text-slate-800">Karakteristik Busa</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">Formula busa mirip sabun bayi. Memiliki <strong>lebih sedikit busa</strong> dibanding sabun kimia keras, namun lebih sehat untuk kulit.</p>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-red-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                        <div class="w-14 h-14 rounded-2xl bg-red-100 text-red-600 flex items-center justify-center text-3xl mb-5 group-hover:scale-110 group-hover:bg-red-500 group-hover:text-white transition-all duration-300">
+                            <i class="fa-solid fa-ban"></i>
+                        </div>
+                        <h4 class="font-bold text-lg mb-2 text-slate-800">Batasan Pemakaian</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">Sabun ini tidak dapat menyembuhkan masalah kulit akibat faktor internal (seperti biduran akibat alergi cuaca/makanan).</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- KOMPOSISI UTAMA -->
+            <section id="komposisi">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-400 to-amber-600 text-white flex items-center justify-center text-2xl shadow-lg shadow-amber-500/30">
+                        <i class="fa-solid fa-flask-vial animate-spin-slow"></i>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-slate-800">Komposisi Utama</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <!-- MES -->
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-green-100 hover:border-green-300 transition-colors">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-green-400 to-green-600 text-white flex items-center justify-center text-xl shadow-md">
+                                <i class="fa-solid fa-leaf"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 leading-tight">MES</h4>
+                                <span class="text-[11px] font-bold text-green-700 bg-green-100 px-2.5 py-0.5 rounded-full uppercase tracking-wider">Pembersih Nabati</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-2 text-sm text-slate-600">
+                            <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-green-500 mt-0.5"></i> <span>Lebih lembut dari SLS/SLES, tidak bikin kulit kering.</span></li>
+                            <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-green-500 mt-0.5"></i> <span>Terbuat dari nabati kelapa sawit (ramah lingkungan).</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Gliserin -->
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-blue-100 hover:border-blue-300 transition-colors">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 text-white flex items-center justify-center text-xl shadow-md">
+                                <i class="fa-solid fa-droplet"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 leading-tight">Gliserin Nabati</h4>
+                                <span class="text-[11px] font-bold text-blue-700 bg-blue-100 px-2.5 py-0.5 rounded-full uppercase tracking-wider">Pelembap Ekstra</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-2 text-sm text-slate-600">
+                            <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-blue-500 mt-0.5"></i> <span>Menarik dan mengunci air agar kulit tetap halus.</span></li>
+                            <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-blue-500 mt-0.5"></i> <span>Membantu menenangkan kulit sensitif & kemerahan.</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Garam -->
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 hover:border-slate-400 transition-colors">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-slate-400 to-slate-600 text-white flex items-center justify-center text-xl shadow-md">
+                                <i class="fa-solid fa-cubes-stacked"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 leading-tight">Garam Alami</h4>
+                                <span class="text-[11px] font-bold text-slate-700 bg-slate-100 px-2.5 py-0.5 rounded-full uppercase tracking-wider">Pengental & Booster</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-2 text-sm text-slate-600">
+                            <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-slate-500 mt-0.5"></i> <span>Memberi tingkat kekentalan sabun yang ideal.</span></li>
+                            <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-slate-500 mt-0.5"></i> <span>Kandungan mineralnya bantu regenerasi sel kulit mati.</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Belerang -->
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-amber-200 hover:border-amber-400 transition-colors">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 text-white flex items-center justify-center text-xl shadow-md">
+                                <i class="fa-solid fa-shield-virus"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 leading-tight">Belerang (Sulfur)</h4>
+                                <span class="text-[11px] font-bold text-amber-700 bg-amber-100 px-2.5 py-0.5 rounded-full uppercase tracking-wider">Agen Antibakteri</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-2 text-sm text-slate-600">
+                            <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-amber-500 mt-0.5"></i> <span>Membasmi bakteri penyebab jerawat, biang keringat & gatal.</span></li>
+                            <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-amber-500 mt-0.5"></i> <span>Membantu mempercepat pengelupasan sel kulit mati.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CALL TO ACTION (WHATSAPP) -->
+            <section id="pesan-ulang" class="relative bg-gradient-to-br from-[#25D366] to-[#128C7E] rounded-[2.5rem] p-8 md:p-12 text-center text-white overflow-hidden shadow-2xl shadow-emerald-600/30">
+                <!-- Background WA Icon Berputar -->
+                <i class="fa-brands fa-whatsapp absolute -right-10 -top-10 text-[12rem] text-white opacity-10 animate-spin-slow pointer-events-none"></i>
+                <i class="fa-solid fa-pump-soap absolute -left-10 -bottom-10 text-[10rem] text-white opacity-10 pointer-events-none transform -rotate-12"></i>
+                
+                <div class="relative z-10">
+                    <h3 class="text-3xl md:text-4xl font-extrabold mb-8 drop-shadow-md tracking-tight">Ingin Pesan Lagi?</h3>
+                    
+                    <div class="max-w-lg mx-auto bg-white/95 backdrop-blur text-slate-800 rounded-3xl p-6 mb-8 text-left shadow-xl">
+                        <!-- Benefit 1 -->
+                        <div class="flex gap-4 mb-5">
+                            <div class="w-12 h-12 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center text-xl flex-shrink-0">
+                                <i class="fa-solid fa-tags"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-base md:text-lg mb-1 text-green-700">Harga Jauh Lebih Murah!</h5>
+                                <p class="text-sm text-slate-600 leading-relaxed">Beli langsung via WA tanpa potongan biaya admin aplikasi/marketplace. Harga tangan pertama dijamin termurah.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="w-full h-px bg-slate-200 mb-5"></div>
+                        
+                        <!-- Benefit 2 -->
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-xl flex-shrink-0">
+                                <i class="fa-solid fa-box-open"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-base md:text-lg mb-1 text-blue-700">Tetap Bisa COD (Bayar di Tempat)</h5>
+                                <p class="text-sm text-slate-600 leading-relaxed">Takut barang tak sampai? Pesanan tetap dikirim via ekspedisi. Barang sampai di rumah, baru bayar ke kurir!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tombol WA -->
+                    <a href="https://wa.me/6289699007398?text=Halo,%20saya%20sudah%20pernah%20beli%20dan%20ingin%20pesan%20Sabun%20Cair%20Belerang%20lagi." target="_blank" class="inline-flex items-center gap-3 bg-white text-[#128C7E] px-8 py-4 rounded-full text-xl md:text-2xl font-bold shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-300 group">
+                        <i class="fa-brands fa-whatsapp text-3xl animate-bounce-subtle group-hover:text-[#25D366] transition-colors"></i> 
+                        <span>0896-9900-7398</span>
+                    </a>
+                    
+                    <p class="mt-4 text-sm font-medium opacity-90 flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-hand-pointer animate-float"></i> Klik tombol di atas untuk pemesanan otomatis
+                    </p>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="bg-slate-900 text-slate-400 text-center py-10 mt-auto rounded-t-3xl">
+            <div class="mb-3 text-brand-500 text-2xl">
+                <i class="fa-solid fa-pump-soap"></i>
+            </div>
+            <h4 class="text-white font-bold tracking-wider uppercase text-sm mb-2">Sabun Cair Belerang</h4>
+            <p class="text-xs opacity-60">&copy; 2024. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+    <!-- SCRIPT INTERAKSI FAQ -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const btn = item.querySelector('button');
+                
+                btn.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    
+                    // Tutup semua yang terbuka
+                    faqItems.forEach(otherItem => {
+                        otherItem.classList.remove('active');
+                    });
+                    
+                    // Buka yang sedang diklik
+                    if (!isActive) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+            
+            // Buka FAQ pertama secara otomatis saat web dimuat
+            if(faqItems.length > 0) {
+                faqItems[0].classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
